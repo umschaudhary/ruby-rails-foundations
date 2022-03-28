@@ -18,7 +18,11 @@
       <td><%= project.title %></td>
       <td><%= project.description %></td>
       <td><%= project.percent_complete ? project.percent_complete : 0 %></td>
-      <td><%= link_to "Show this project", project %> </td>
+      <td>
+        <%= link_to "Show", project %>
+
+        <%= link_to "Edit", edit_project_path(project) %>
+    </td>
     </tr>
   <% end %>
   </tbody>
