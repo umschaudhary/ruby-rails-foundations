@@ -4,6 +4,7 @@ class Project < ApplicationRecord
   # integrate validations
   # integrate callbacks
   # integrating database relationships
+  has_many :tasks
   after_initialize:set_defaults
 
 
@@ -14,6 +15,6 @@ class Project < ApplicationRecord
     self.percent_complete ||= 0.0
   end
 
-  validates_presence_of :title, :description
+  validates_presence_of :title, :description, :percent_complete
 
 end
