@@ -1,14 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Projects</h1>
-
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
-</div>
-
 <%= link_to "New project", new_project_path %>
+
+<table id="projects">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Percent Completed</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project | %>
+    <tr>
+      <td><%= project.title %></td>
+      <td><%= project.description %></td>
+      <td><%= project.percent_complete ? project.percent_complete : 0 %></td>
+      <td><%= link_to "Show this project", project %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+

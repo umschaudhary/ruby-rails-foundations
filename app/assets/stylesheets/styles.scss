@@ -1,0 +1,35 @@
+@font-face{
+	font-family:"Hunger Games";
+	src:url('/assets/HungerGames');
+}
+
+body {
+	margin-left:20px;
+	margin-top:20px;
+}
+
+h1 {
+	font-family:"Hunger Games", Gadget, sans-serif;
+	font-size:2.25em;
+}
+
+p {
+	font-family: Verdana, sans-serif;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
