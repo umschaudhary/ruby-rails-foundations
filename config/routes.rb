@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get 'error',  to:'pages#error'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :projects
+  resources :projects do
+    resources :task, except: [:index], controller: 'projects/tasks'
+  end
+
   root 'pages#home'
 
   get '*path', to: redirect("/error")
