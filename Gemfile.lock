@@ -500,6 +500,7 @@ DEPENDENCIES
   debug
   figaro
   fog
+  fog-aws
   importmap-rails
   jbuilder
   mini_magick (~> 3.5.0)

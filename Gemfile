@@ -30,6 +30,7 @@ gem "jbuilder"
 gem 'carrierwave'
 gem 'mini_magick', '~> 3.5.0'
 gem 'fog'
+gem 'fog-aws'
 gem 'figaro'
 
 # Use Redis adapter to run Action Cable in production
