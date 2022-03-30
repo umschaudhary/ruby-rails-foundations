@@ -72,6 +72,7 @@ GEM
     aliyun-sdk (0.8.0)
       nokogiri (~> 1.6)
       rest-client (~> 2.0)
+    bcrypt (3.1.17)
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
@@ -97,6 +98,12 @@ GEM
       irb (>= 1.3.6)
       reline (>= 0.2.7)
     declarative (0.0.20)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     digest (3.1.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -368,6 +375,7 @@ GEM
     nokogiri (1.13.3-arm64-darwin)
       racc (~> 1.4)
     optimist (3.0.1)
+    orm_adapter (0.5.0)
     os (1.1.4)
     ovirt-engine-sdk (4.4.1)
       json (>= 1, < 3)
@@ -417,6 +425,9 @@ GEM
       declarative (< 0.1.0)
       trailblazer-option (>= 0.1.1, < 0.2.0)
       uber (< 0.2.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -469,6 +480,8 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.1)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -498,6 +511,7 @@ DEPENDENCIES
   capybara
   carrierwave
   debug
+  devise
   figaro
   fog
   fog-aws

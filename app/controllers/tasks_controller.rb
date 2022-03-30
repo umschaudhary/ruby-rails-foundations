@@ -1,4 +1,4 @@
-class Projects::TasksController < ApplicationController
+class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_project, only: [:show, :new, :create, :edit, :update, :destroy]
 
@@ -17,7 +17,7 @@ class Projects::TasksController < ApplicationController
     @task.project_id = @project.id
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: "Task was created successfully!" }
+        format.html { redirect_to project_url(@project.id), notice: 'Task was created successfully!' }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -29,7 +29,7 @@ class Projects::TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to @task, notice: "Task was updated successfully!" }
+        format.html { redirect_to project_url(@task.project_id), notice: 'Task was updated successfully!' }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :edit }
@@ -57,6 +57,6 @@ class Projects::TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :description, :project_id, :completed)
+    params.require(:task).permit(:title, :description, :project_id, :completed, :task_file)
   end
 end

@@ -1,4 +1,4 @@
-<%= form_for[@project, @task ] do |f| %>
+<%= form_for [@project, @task ] do |f| %>
   <% if @task.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -21,7 +21,7 @@
   <%= f.text_field :completed %>
 
   <%= f.label "Attachment" %>
-  <%= f.text_field :task_file %>
+  <%= f.file_field :task_file %>
 
   <%= f.submit %>
 

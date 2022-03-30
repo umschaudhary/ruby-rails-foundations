@@ -3,6 +3,8 @@ class Task < ApplicationRecord
   after_save :update_precent_complete if :mark_complete?
   scope :completed, -> { where(completed: true) }
 
+  mount_uploader :task_file, TaskFileUploader
+
   def mark_complete?
     self.completed == true
   end
